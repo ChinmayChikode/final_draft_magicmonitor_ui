@@ -1,0 +1,39 @@
+<h4 mat-dialog-title>BAM Filters</h4>
+
+<mat-dialog-content>
+
+  <h4 class="f-w-400"><u><b>Time Range Filters</b></u></h4>
+  <div class="m-l-8">
+  <mat-form-field class="mat-form-field-From-datepicker">
+    <input #fromDate matInput [matDatepicker]="fromPicker" placeholder="From date">
+    <mat-datepicker-toggle matSuffix [for]="fromPicker"></mat-datepicker-toggle>
+    <ngx-mat-datetime-picker #fromPicker [showSeconds]="true" [enableMeridian]="true">
+    </ngx-mat-datetime-picker>
+  </mat-form-field>
+  <br>
+  <mat-form-field class="mat-form-field-To-datepicker">
+    <input #toDate matInput [matDatepicker]="toPicker" placeholder="To date">
+    <mat-datepicker-toggle matSuffix [for]="toPicker"></mat-datepicker-toggle>
+    <ngx-mat-datetime-picker #toPicker [showSeconds]="true" [enableMeridian]="true">
+    </ngx-mat-datetime-picker>
+  </mat-form-field>
+</div>
+  <mat-divider inset class="m-x-0 m-y-24"></mat-divider>
+  <h4 class="f-w-400"><u><b>User Key Filters</b></u></h4>
+  <div class="m-l-8">
+    <div>
+      <mat-label style="font-size: 12px !important;padding-right: 15px;">User Key 1</mat-label>
+      <input #userKey1 type="text" placeholder="Uk1" style="width: 60%;font-size: 12px !important;">
+      <br>
+      <mat-label style="font-size: 12px !important;padding-right: 15px;">User Key 2</mat-label>
+      <input #userKey2 type="text" placeholder="Uk1" style="width: 60%;font-size: 12px !important;">
+
+    </div>
+  </div>  
+
+</mat-dialog-content> 
+
+<mat-dialog-actions>
+  <button mat-raised-button color="primary" (click)="applyFilters(fromDate.value,toDate.value,userKey1.value,userKey2.value)">Apply</button>
+  <button mat-raised-button (click)="applyFilters(null,null,null,null)">Clear</button>  
+</mat-dialog-actions>

@@ -1,0 +1,101 @@
+.mat-radio-label-content-1 {
+  margin-top: 5px !important;
+  font-size: 12px !important;
+  padding-right: 7px !important;
+  -webkit-user-select: auto;
+  -moz-user-select: auto;
+  -ms-user-select: auto;
+  user-select: auto;
+  display: inline-block;
+  order: 0;
+  line-height: inherit;
+  padding-left: 0px !important;
+  /*padding-bottom: 4px !important;*/
+}
+.mat-radio-label-content {
+  margin-top: 5px !important;
+  font-size: 12px !important;
+  padding-right: 7px !important;
+  -webkit-user-select: auto;
+  -moz-user-select: auto;
+  -ms-user-select: auto;
+  user-select: auto;
+  display: inline-block;
+  order: 0;
+  line-height: inherit;
+  padding-left: 0px !important;
+  padding-bottom: 4px !important;
+}
+.tp-wrapper {
+  -webkit-perspective: 900px;
+  perspective: 900px;
+}
+
+.tp-box {
+  position: relative;
+  height: 275px;
+  margin: 0.5rem auto;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  -webkit-transform: transform 0.5s;
+  -ms-transform: transform 0.5s;
+  transform: transform 0.5s;
+}
+.tp-box__side {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.tp-box__front {
+  -webkit-transform: rotateY(0deg);
+  -ms-transform: rotateY(0deg);
+  transform: rotateY(0deg);
+}
+.tp-box__back {
+  -webkit-transform: rotateY(-180deg);
+  -ms-transform: rotateY(-180deg);
+  transform: rotateY(-180deg);
+}
+
+body {
+  margin:0px;
+  font-family:"Open Sans",sans-serif;
+}
+#context-menu {
+  position:fixed;
+  z-index:100;
+  width:135px;
+  background:rgb(238, 229, 229);
+  border-radius:5px;
+  transform:scale(0);
+  transform-origin:top left; 
+}
+#context-menu.active {
+  transform:scale(1);
+  transition:transform 300ms ease-in-out;
+}
+#context-menu .item {
+  padding:8px 10px;
+  font-size:12.5px;
+  color:black;
+}
+#context-menu .item:hover {
+  background:#555;
+  color:whitesmoke;
+}
+#context-menu .item i {
+  display:inline-block;
+  margin-right:5px;
+}
+#context-menu hr {
+  margin:2px 0px;
+  border-color:#555;
+}
